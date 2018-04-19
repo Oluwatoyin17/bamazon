@@ -1,4 +1,4 @@
-var pass = "JesusisLord1."
+var pass = ""
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
