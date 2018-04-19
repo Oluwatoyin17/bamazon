@@ -36,5 +36,5 @@ Once the customer has placed the order, the application checks if the store has 
 
     * If it does, the order goes through, and the customer sees the total cost of their purchase
 
-   * If not, the app logs a phrase like `Insufficient quantity!`, and then prevent the order from going through.
+    * If not, the app logs a phrase like `Insufficient quantity!`, and then prevent the order from going through.
    
