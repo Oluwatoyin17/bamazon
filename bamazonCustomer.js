@@ -20,6 +20,7 @@ connection.connect(function(err) {
     // querySpecific();
     // afterConnection();
     
+    
 });
 afterConnection();
 whatProduct();
@@ -43,12 +44,12 @@ function afterConnection(){
 //The app should then prompt users with two messages.
 // First ask them the ID of the product they would like to buy
 function whatProduct(){
-    console.log("working");
+    // console.log("working");
     inquirer.prompt([
         {
-    name: "item",
     type: "input",
     message: "What is the id of the product you want to buy?",
+    name: "item",
     validate: function(value) {
         if (isNaN(value) === false) {
           return true;
@@ -57,9 +58,9 @@ function whatProduct(){
       }        
     },
         {
-    name:"quantity",
     type: "input",
     message: "How many units would you like to buy?",
+    name:"quantity",
     validate: function(value) {
         if (isNaN(value) === false) {
           return true;
@@ -74,16 +75,16 @@ function whatProduct(){
         for (var i=0;i<products.length;i++){
             if(products[i].item_id == answer.item){
                 chosenItem = products[i];
-                console.log(chosenItem);
+                // console.log(chosenItem);
             }
         }
-        console.log(chosenItem);
+        // console.log(chosenItem);
         if (chosenItem.stock_quantity >= parseInt(answer.quantity)){
             connection.query(
                 "UPDATE products SET ? WHERE ?",
                 [
                    {
-                       stock_quantity: answer.quantity
+                       stock_quantity:  answer.quantity
                    } ,
                    {
                        item_id : chosenItem.item
@@ -95,16 +96,17 @@ function whatProduct(){
                     console.log("The total cost of purchase is"+" "+"$"+
                 parseInt(answer.quantity * chosenItem.price));
                     // afterConnection();
-                    whatProduct();
+                    // whatProduct();
                 }
             );
         }
         else{
             console.log("Insufficient quantity!");
             // afterConnection();
-            whatProduct();
+            // whatProduct();
         }
 
     })
 }
+// whatProduct();
 
