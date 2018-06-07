@@ -38,3 +38,6 @@ Once the customer has placed the order, the application checks if the store has 
 
     * If not, the app logs a phrase like `Insufficient quantity!`, and then prevent the order from going through.
    
+   #Video
+   [video here](https://drive.google.com/file/d/1EA3qYpRwcfLY66udlwCzX8oD-eDd6TOD/view)
+   
